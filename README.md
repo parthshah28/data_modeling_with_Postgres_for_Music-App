@@ -1,1 +1,34 @@
 # data_modeling_with_Postgres_for_Music-App
+
+- **Objective**:
+    - Optimize the querying of songplay data for a music streaming app.
+    - Develop a Postgres database with a tailored schema and ETL pipeline to enhance songplay analysis.
+- **Introduction and Background**:
+    - Initial data is unstructured, residing in JSON logs of user activity and song metadata.
+    - The goal is to enable easy querying and analysis of what songs users listen to.
+- **Dataset Overview**:
+    - **Song Dataset**: Subset of the Million Song Dataset in JSON format, including song and artist metadata.
+    - **Log Dataset**: Event simulator logs in JSON, detailing user activity on the streaming app.
+- **Project Structure**:
+    - Data folders (**`song_data`** and **`log_data`**) containing JSON files.
+    - Jupyter notebooks for ETL process development and testing (**`etl.ipynb`**, **`test.ipynb`**).
+    - Source code in **`src`** directory, including **`etl.py`** for ETL building, **`sql_queries.py`** for query assistance, and **`create_tables.py`** for database/table setup.
+- **ETL Pipeline**:
+    - **`etl.py`** script processes and inserts data into the database.
+    - Functions to handle song data (**`process_song_file`**) and log data (**`process_log_file`**).
+    - **`create_tables.py`** script for setting up database schema including Fact and Dimension tables.
+- **Database Schema**:
+    - **Fact Table**: **`songplays`** - records in log data associated with song plays.
+    - **Dimension Tables**:
+        - **`users`** - users in the app.
+        - **`songs`** - songs in the music database.
+        - **`artists`** - artists in the music database.
+        - **`time`** - timestamps of records broken down into specific units.
+- **Key Features**:
+    - A structured relational database enabling efficient analysis of user song play behavior.
+    - SQL-based schema tailored for optimized querying and data retrieval.
+    - Scalable ETL pipeline ensuring the consistent and organized flow of data into the database.
+- **Results**:
+    - Successfully transformed unstructured JSON logs into a structured relational database.
+    - Enhanced data retrieval speeds, enabling quicker and more efficient analytics.
+    - Facilitated the extraction of valuable insights regarding user preferences and streaming habits.
